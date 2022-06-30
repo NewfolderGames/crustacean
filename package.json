@@ -1,0 +1,26 @@
+{
+	"name": "crustacean",
+	"version": "0.1.0",
+	"description": "Poorly implemented Rust features in TypeScript.",
+	"author": "NewfolderGames",
+	"license": "MIT",
+	"keywords": ["rust", "typescript"],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/NewfolderGames/lib-crustacean.git"
+	},
+	"bugs": {
+		"email": "me@newfolder.games",
+		"url": "https://github.com/NewfolderGames/lib-crustacean/issues"
+	},
+	"homepage": "https://github.com/NewfolderGames/lib-crustacean#readme",
+	"main": "src/index.ts",
+	"scripts": {
+		"build": "tsc",
+		"lint": "eslint --fix"
+	},
+	"devDependencies": {
+		"eslint": "^8.18.0",
+		"typescript": "^4.7.4"
+	}
+}
