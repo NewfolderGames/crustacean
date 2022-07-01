@@ -4,7 +4,10 @@
 	"description": "Poorly implemented Rust features in TypeScript.",
 	"author": "NewfolderGames",
 	"license": "MIT",
-	"keywords": ["rust", "typescript"],
+	"keywords": [
+		"rust",
+		"typescript"
+	],
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/NewfolderGames/lib-crustacean.git"
@@ -20,6 +23,8 @@
 		"lint": "eslint --fix"
 	},
 	"devDependencies": {
+		"@typescript-eslint/eslint-plugin": "^5.30.0",
+		"@typescript-eslint/parser": "^5.30.0",
 		"eslint": "^8.18.0",
 		"typescript": "^4.7.4"
 	}
