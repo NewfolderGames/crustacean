@@ -1,3 +1,5 @@
+import { Result, ResultError, ResultOk } from "./result";
+
 export class Option<T> {
 
 	private readonly option: T | undefined;
@@ -60,8 +62,31 @@ export class Option<T> {
 
 	public map<U>(fn: (value: T) => Option<U>): Option<U> {
 
-		if (this.option !== undefined) return fn(this.option);
-		else return new Option();
+		return this.option !== undefined ? fn(this.option) : new Option();
+
+	}
+
+	public mapOr<U>(def: U, fn: (value: T) => U): U {
+
+		return this.option !== undefined ? fn(this.option) : def;
+
+	}
+
+	public mapOrElse<U>(def: () => U, fn: (value: T) => U): U {
+
+		return this.option !== undefined ? fn(this.option) : def();
+
+	}
+
+	public okOr<E>(err: E): Result<T, E> {
+
+		return this.option !== undefined ? new ResultOk(this.option) : new ResultError(err);
+
+	}
+
+	public okOrElse<E>(err: () => E): Result<T, E> {
+
+		return this.option !== undefined ? new ResultOk(this.option) : new ResultError(err());
 
 	}
 
